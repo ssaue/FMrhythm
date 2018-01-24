@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -10,22 +10,79 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\ChildFrm.cpp" />
+    <ClCompile Include="..\..\src\Dialog.cpp" />
+    <ClCompile Include="..\..\src\FMData.cpp" />
+    <ClCompile Include="..\..\src\FMfiler.cpp" />
+    <ClCompile Include="..\..\src\fmrytme.cpp" />
+    <ClCompile Include="..\..\src\fmrytmeDoc.cpp" />
+    <ClCompile Include="..\..\src\fmrytmeView.cpp" />
+    <ClCompile Include="..\..\src\MainFrm.cpp" />
+    <ClCompile Include="..\..\src\MidiData.cpp" />
+    <ClCompile Include="..\..\src\MidiDialog.cpp" />
+    <ClCompile Include="..\..\src\Operator.cpp" />
+    <ClCompile Include="..\..\src\Settings.cpp" />
+    <ClCompile Include="..\..\src\StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Time.cpp" />
+    <ClCompile Include="..\..\src\Utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\ChildFrm.h" />
+    <ClInclude Include="..\..\src\Dialog.h" />
+    <ClInclude Include="..\..\src\FMData.h" />
+    <ClInclude Include="..\..\src\FMfiler.h" />
+    <ClInclude Include="..\..\src\fmrytme.h" />
+    <ClInclude Include="..\..\src\fmrytmeDoc.h" />
+    <ClInclude Include="..\..\src\fmrytmeView.h" />
+    <ClInclude Include="..\..\src\MainFrm.h" />
+    <ClInclude Include="..\..\src\MidiData.h" />
+    <ClInclude Include="..\..\src\MidiDialog.h" />
+    <ClInclude Include="..\..\src\Operator.h" />
+    <ClInclude Include="..\..\src\reserve.h" />
+    <ClInclude Include="..\..\src\resource.h" />
+    <ClInclude Include="..\..\src\Settings.h" />
+    <ClInclude Include="..\..\src\StdAfx.h" />
+    <ClInclude Include="..\..\src\Time.h" />
+    <ClInclude Include="..\..\src\Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\src\fmrytme.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Prosjekter\ssp\source\Fmrytme\build\win-x86\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Prosjekter\ssp\source\Fmrytme\build\win-x86\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\fmrytme.reg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\src\bitmap1.bmp" />
+    <Image Include="..\..\src\bmp00001.bmp" />
+    <Image Include="..\..\src\bmp00002.bmp" />
+    <Image Include="..\..\src\fmrytme.ico" />
+    <Image Include="..\..\src\fmrytmeDoc.ico" />
+    <Image Include="..\..\src\Toolbar.bmp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <SccProjectName />
     <SccLocalPath />
     <Keyword>MFCProj</Keyword>
     <ProjectGuid>{5A970BC5-5B88-424C-8598-90C2F56C1B81}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -43,13 +100,13 @@
     <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>.\release\bin\</OutDir>
+    <IntDir>.\release\obj\FmRytme\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>.\debug\bin\</OutDir>
+    <IntDir>.\debug\obj\FmRytme\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -62,19 +119,19 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Release/fmrytme.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)FmRytme.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Release/fmrytme.exe</OutputFile>
+      <OutputFile>$(OutDir)FmRytme.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>.\Release/fmrytme.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
@@ -89,6 +146,7 @@
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0414</Culture>
+      <AdditionalIncludeDirectories>..\..\src\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -98,10 +156,10 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Debug/fmrytme.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)FmRytme_local.pdb</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -109,10 +167,10 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Debug/fmrytme.exe</OutputFile>
+      <OutputFile>$(OutDir)FmRytme.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\Debug/fmrytme.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
@@ -127,63 +185,15 @@
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0414</Culture>
+      <AdditionalIncludeDirectories>..\..\src\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Image Include="res\bitmap1.bmp" />
-    <Image Include="res\bmp00001.bmp" />
-    <Image Include="res\bmp00002.bmp" />
-    <Image Include="res\fmrytme.ico" />
-    <Image Include="res\fmrytmeDoc.ico" />
-    <Image Include="res\Toolbar.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\fmrytme.rc2" />
-    <None Include="src\fmrytme.reg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\ChildFrm.h" />
-    <ClInclude Include="src\Dialog.h" />
-    <ClInclude Include="src\FMData.h" />
-    <ClInclude Include="src\FMfiler.h" />
-    <ClInclude Include="src\fmrytme.h" />
-    <ClInclude Include="src\fmrytmeDoc.h" />
-    <ClInclude Include="src\fmrytmeView.h" />
-    <ClInclude Include="src\MainFrm.h" />
-    <ClInclude Include="src\MidiData.h" />
-    <ClInclude Include="src\MidiDialog.h" />
-    <ClInclude Include="src\Operator.h" />
-    <ClInclude Include="src\reserve.h" />
-    <ClInclude Include="src\resource.h" />
-    <ClInclude Include="src\Settings.h" />
-    <ClInclude Include="src\StdAfx.h" />
-    <ClInclude Include="src\Time.h" />
-    <ClInclude Include="src\Utility.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\ChildFrm.cpp" />
-    <ClCompile Include="src\Dialog.cpp" />
-    <ClCompile Include="src\FMData.cpp" />
-    <ClCompile Include="src\FMfiler.cpp" />
-    <ClCompile Include="src\fmrytme.cpp" />
-    <ClCompile Include="src\fmrytmeDoc.cpp" />
-    <ClCompile Include="src\fmrytmeView.cpp" />
-    <ClCompile Include="src\MainFrm.cpp" />
-    <ClCompile Include="src\MidiData.cpp" />
-    <ClCompile Include="src\MidiDialog.cpp" />
-    <ClCompile Include="src\Operator.cpp" />
-    <ClCompile Include="src\Settings.cpp" />
-    <ClCompile Include="src\StdAfx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="src\Time.cpp" />
-    <ClCompile Include="src\Utility.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="src\fmrytme.rc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="\Prosjekter\ssp\source\Fmrytme\src\fmrytme.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
