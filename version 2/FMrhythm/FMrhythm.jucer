@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="xQk2ti" name="FMrhythm" projectType="guiapp" jucerVersion="5.3.2">
+<JUCERPROJECT id="xQk2ti" name="FMrhythm" projectType="guiapp" jucerVersion="5.4.1">
   <MAINGROUP id="pteOB8" name="FMrhythm">
     <GROUP id="{38C823CA-950E-23D8-D0AE-F777ABCF445C}" name="Source">
       <FILE id="owjaUf" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
